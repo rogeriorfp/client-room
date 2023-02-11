@@ -1,9 +1,9 @@
 export class Room {
-    constructor() { }
-    id!:number;
-    name!:string;
-    date!: string;
-    startHour!: string;
-    endHour!: string;
-    active:boolean = true;
+  constructor() { }
+  id!: number;
+  name!: string;
+  date!: Date;
+  startHour!: Date;
+  endHour!: Date;
+  active: boolean = true;
 }
