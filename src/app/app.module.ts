@@ -9,29 +9,22 @@ import { RoomListComponent } from './rooms/room-list/room-list.component';
 import { UpdateRoomComponent } from './rooms/update-room/update-room.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
 import localePt from "@angular/common/locales/pt";
 import { registerLocaleData } from '@angular/common';
 
 registerLocaleData(localePt);
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    CreateRoomComponent,
-    RoomDetailsComponent,
-    RoomListComponent,
-    UpdateRoomComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        CreateRoomComponent,
+        RoomDetailsComponent,
+        RoomListComponent,
+        UpdateRoomComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FormsModule], providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
