@@ -4,9 +4,10 @@ import { Room } from '../room';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-create-room',
-  templateUrl: './create-room.component.html',
-  styleUrls: ['./create-room.component.css']
+    selector: 'app-create-room',
+    templateUrl: './create-room.component.html',
+    styleUrls: ['./create-room.component.css'],
+    standalone: false
 })
 export class CreateRoomComponent {
   room: Room = new Room();

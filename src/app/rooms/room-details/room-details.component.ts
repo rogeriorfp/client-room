@@ -4,9 +4,10 @@ import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
 
 @Component({
-  selector: 'app-room-details',
-  templateUrl: './room-details.component.html',
-  styleUrls: ['./room-details.component.css']
+    selector: 'app-room-details',
+    templateUrl: './room-details.component.html',
+    styleUrls: ['./room-details.component.css'],
+    standalone: false
 })
 export class RoomDetailsComponent implements OnInit{
   id!:number

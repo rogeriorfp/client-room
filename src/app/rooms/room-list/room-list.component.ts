@@ -6,9 +6,10 @@ import { RoomDetailsComponent } from "src/app/rooms/room-details/room-details.co
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-room-list',
-  templateUrl: './room-list.component.html',
-  styleUrls: ['./room-list.component.css']
+    selector: 'app-room-list',
+    templateUrl: './room-list.component.html',
+    styleUrls: ['./room-list.component.css'],
+    standalone: false
 })
 export class RoomListComponent implements OnInit{
   rooms:Observable<Room[]> | undefined;
