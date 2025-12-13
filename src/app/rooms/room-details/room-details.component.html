@@ -1,16 +1,18 @@
 <div class="container shadow p-3 mb-5 bg-white rounded">
-    <div class="jumbotron">
-        <h3 class="display-4">Room Details</h3>
-        <hr class="my-4">
-        <div *ngIf="room">
-            <div><label><b>Name:&nbsp; </b></label>{{room.name}}</div>
-            <div><label><b>Date:&nbsp; </b></label>{{room.date | date}}</div>
-            <div><label><b>Start Hour:&nbsp;</b>{{room.startHour | date : 'HH:mm'}}</label></div>
-            <div><label><b>End Hour:&nbsp;</b>{{room.endHour | date : 'HH:mm'}}</label></div>
-        </div>
+  <div class="jumbotron">
+    <h3 class="display-4">Room Details</h3>
+    <hr class="my-4">
+    @if (room) {
+      <div>
+        <div><label><b>Name:&nbsp; </b></label>{{room.name}}</div>
+        <div><label><b>Date:&nbsp; </b></label>{{room.date | date}}</div>
+        <div><label><b>Start Hour:&nbsp;</b>{{room.startHour | date : 'HH:mm'}}</label></div>
+        <div><label><b>End Hour:&nbsp;</b>{{room.endHour | date : 'HH:mm'}}</label></div>
+      </div>
+    }
 
-        <br><br>
+    <br><br>
 
-        <button (click)="list()" class="btn btn-primary">Back to Room List</button>
-    </div>
+    <button (click)="list()" class="btn btn-primary">Back to Room List</button>
+  </div>
 </div>

@@ -1,43 +1,45 @@
 <div class="container shadow p-3 mb-5 bg-white rounded">
-    <div class="jumbotron">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h2 class="display-4">Room List</h2>
-                <hr class="my-4">
-            </div>
-            <div class="input-group">
-                <a class="btn btn-outline-primary btn-sm" routerLink="/add">Add Room</a>
-            </div>
-            <div class="panel-body">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">name</th>
-                            <th scope="col">date</th>
-                            <th scope="col">startHour</th>
-                            <th scope="col">endHour</th>
-                            <th scope="col">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let room of rooms | async">
-                            <td>{{room.name}}</td>
-                            <td>{{room.date | date : 'dd/MM/yyyy'}}</td>
-                            <td>{{room.startHour | date : 'HH:mm'}}</td>
-                            <td>{{room.endHour | date : 'HH:mm'}}</td>
-                            <td>
-                                <button type="button" (click)="deleteRoom(room.id)"
-                                    class="btn btn-danger">Delete</button>
-                                &nbsp;
-                                <button type="button" (click)="updateRoom(room.id)" class="btn btn-info">Update</button>
-                                &nbsp;
-                                <button type="button" (click)="roomDetails(room.id)"
-                                    class="btn btn-info">Details</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+  <div class="jumbotron">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2 class="display-4">Room List</h2>
+        <hr class="my-4">
+      </div>
+      <div class="input-group">
+        <a class="btn btn-outline-primary btn-sm" routerLink="/add">Add Room</a>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">name</th>
+              <th scope="col">date</th>
+              <th scope="col">startHour</th>
+              <th scope="col">endHour</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (room of rooms | async; track room) {
+              <tr>
+                <td>{{room.name}}</td>
+                <td>{{room.date | date : 'dd/MM/yyyy'}}</td>
+                <td>{{room.startHour | date : 'HH:mm'}}</td>
+                <td>{{room.endHour | date : 'HH:mm'}}</td>
+                <td>
+                  <button type="button" (click)="deleteRoom(room.id)"
+                  class="btn btn-danger">Delete</button>
+                  &nbsp;
+                  <button type="button" (click)="updateRoom(room.id)" class="btn btn-info">Update</button>
+                  &nbsp;
+                  <button type="button" (click)="roomDetails(room.id)"
+                  class="btn btn-info">Details</button>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
