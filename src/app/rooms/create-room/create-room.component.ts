@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
 import { Router } from "@angular/router";
@@ -7,6 +7,7 @@ import { Router } from "@angular/router";
     selector: 'app-create-room',
     templateUrl: './create-room.component.html',
     styleUrls: ['./create-room.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CreateRoomComponent {

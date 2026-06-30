@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
@@ -7,6 +7,7 @@ import { Room } from '../room';
     selector: 'app-room-details',
     templateUrl: './room-details.component.html',
     styleUrls: ['./room-details.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class RoomDetailsComponent implements OnInit{
