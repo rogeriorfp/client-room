@@ -1,9 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
-import { RoomDetailsComponent } from "src/app/rooms/room-details/room-details.component";
 import { Router } from "@angular/router";
+import { RoomService } from '../../services/room.service';
 
 @Component({
     selector: 'app-room-list',
@@ -14,7 +13,7 @@ import { Router } from "@angular/router";
 })
 export class RoomListComponent implements OnInit{
   rooms:Observable<Room[]> | undefined;
-  constructor(private roomService:RoomService, private router:Router) {    
+  constructor(private roomService:RoomService, private router:Router) {
   }
   ngOnInit(): void {
     this.reloadData();

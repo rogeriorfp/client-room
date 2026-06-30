@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
+import { RoomService } from '../../services/room.service';
 
 @Component({
     selector: 'app-room-details',
@@ -22,9 +22,9 @@ export class RoomDetailsComponent implements OnInit{
     this.id = this.route.snapshot.params['id'];
     this.roomService.getRoom(this.id)
       .subscribe(data => {
-        console.log(data); 
+        console.log(data);
         this.room = data
-      }, 
+      },
       error => console.error(error));
   }
   list(){

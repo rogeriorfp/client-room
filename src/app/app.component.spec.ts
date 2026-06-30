@@ -30,6 +30,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('client-room app is running!');
+    const title = compiled.querySelector('.toolbar span')?.textContent ?? '';
+    expect(title).toContain('Welcome');
   });
 });

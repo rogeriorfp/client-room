@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { RoomService } from 'src/app/services/room.service';
 import { Room } from '../room';
 import { Router } from "@angular/router";
+import { RoomService } from '../../services/room.service';
 
 @Component({
     selector: 'app-create-room',

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RoomDetailsComponent } from './room-details.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AppModule } from '../../app.module';
 
 describe('RoomDetailsComponent', () => {
   let component: RoomDetailsComponent;
@@ -8,9 +11,9 @@ describe('RoomDetailsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RoomDetailsComponent ]
-    })
-    .compileComponents();
+      imports: [AppModule, CommonModule, FormsModule],
+      declarations: [RoomDetailsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(RoomDetailsComponent);
     component = fixture.componentInstance;
